@@ -77,8 +77,8 @@ Python は、 .py ファイルをモジュールとして import して使用で
 Houdini 用のスクリプトであれば Houdini11.0 以下のディレクトリに置いておくのが良いでしょう。
 
 
-ソースの実行
-============
+モジュールからの実行
+====================
 
 シェルからの実行
 ----------------
@@ -87,7 +87,7 @@ Houdini 用のスクリプトであれば Houdini11.0 以下のディレクト�
 
 :download:`このサンプルスクリプト <python/testfile.py>` を上記指定されたディレクトリにコピーして Houdini を実行してください。
 
-Windows の場合は マイドキュメント\Houdini11.0\scripts\python に、 Linux の場合は $HOME/houdini11.0/scripts/python が良いでしょう。
+Windows の場合は マイドキュメント\\Houdini11.0\\scripts\\python に、 Linux の場合は $HOME/houdini11.0/scripts/python が良いでしょう。
 
 ソースの内容は以下のように test 関数が一つ定義されているだけです。
 
