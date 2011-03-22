@@ -9,10 +9,11 @@ Welcome to Python for Houdini's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    introduction
    basic
+   node
 
 Indices and tables
 ==================

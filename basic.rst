@@ -35,9 +35,9 @@ hou モジュールでは、すべてのオブジェクトをノード単位で�
 hou.node(' と打った後にちょっと待つと、ノードパスの補完候補が表示されます。
 メソッドやモジュール名と同様に補完入力が可能です。
 
-.. image:: _static/node.png
+.. image:: _static/images/node.png
 
-    
+
 
 
 
