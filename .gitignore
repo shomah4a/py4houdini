@@ -1,0 +1,8 @@
+*.pyc
+*~
+.installed.cfg
+_build/
+bin/
+docs/
+eggs/
+parts/
