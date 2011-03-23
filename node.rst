@@ -199,7 +199,7 @@ setInput ではなく insertInput を使用すると、ノードの接続の途�
 この章で使用した関数やメソッドのリファレンスです。
 
 
-.. module:: hou
+.. currentmodule:: hou
 
 .. function:: hou.node(node_path)
 
