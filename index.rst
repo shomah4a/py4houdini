@@ -14,6 +14,7 @@ Contents:
    introduction
    basic
    node
+   misc
 
 Indices and tables
 ==================

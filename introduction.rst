@@ -16,14 +16,23 @@ Python について
 Python を使うにあたり、参考になるウェブサイトや書籍を載せておきます。
 
 * `みんなの Python 改訂版 <http://www.sbcr.jp/products/4797353952.html>`_
- * Python 入門書です。入門書ですが、 Python は Web の情報がかなり充実しているため、それほど必要ではないでしょう。
+
+ * Python 入門書です。
+
 * `Python Japan User's Group <http://www.python.jp/Zope>`_
+
  * 日本における Python のユーザグループです。
  * 初めて Python に触る人は `Python の紹介 <http://www.python.jp/Zope/intro/>`_ や `Python Tutorial <http://www.python.jp/doc/release/tutorial/>`_ を読むと良いでしょう。
  * Python チュートリアルは `本にもなっています <http://www.oreilly.co.jp/books/9784873114422/>`_ 。
  * `Python 標準ライブラリリファレンス <http://www.python.jp/doc/release/library/>`_ はこの先末永くお世話になるドキュメントです。 Python を利用する上では必須といっても良いくらいの存在なので、標準ライブラリの使い方で迷ったらここを参照すると良いでしょう。
+
 * `Python Cookbook <http://www.oreilly.co.jp/books/9784873112763/>`_
+
  * Python で「アレがやりたいけどどうやるの?」というときにみると良い本です。
+
+* `Python Programming Language – Official Website <http://python.org/>`_
+
+ * Python の公式サイトです。英語ですが、 Python に関する様々な情報が載っているので、興味のある方は見てみると良いでしょう。
 
 
 インタラクティブシェルを立ち上げる
@@ -107,6 +116,22 @@ Houdini を立ち上げた後、 Python シェルを実行し、以下のよう�
 .. code-block:: python
 
     testing
+
+
+.. note::
+    モジュールを読み込んだ後にモジュールの .py ファイルを編集し、再度 import 文を実行したとしても、モジュールが再度読み込まれることはありません。
+    これは、 Python がモジュールデータをキャッシュしているためです。
+    モジュールを再度ファイルから読み込ませる場合は、 reload() 関数を使用して明示的に再読込させなければいけません。
+
+    上記 testfile モジュールの場合であれば
+
+    .. code-block:: python
+
+        >>> import testfile
+        >>> reload(testfile)
+
+    とすることで再読込が行われます。
+
 
 
 shelf からの実行
