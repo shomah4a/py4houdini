@@ -14,6 +14,7 @@ Contents:
    introduction
    basic
    misc
+   pythonstring
    wxforhoudini
 
 Indices and tables
