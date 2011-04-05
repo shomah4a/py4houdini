@@ -6,6 +6,10 @@
 Welcome to Python for Houdini's documentation!
 ==============================================
 
+Python を Houdini から使う上で有益そうな情報をまとめています。
+
+ソースツリーは `ここらへん <http://github.com/shomah4a/py4houdini>`_ です。
+
 Contents:
 
 .. toctree::
@@ -14,7 +18,7 @@ Contents:
    introduction
    basic
    misc
-   pythonstring
+   pythontips
    wxforhoudini
 
 Indices and tables

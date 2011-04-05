@@ -12,14 +12,14 @@ Python をはじめとして Ruby, Scala, Lua, Squirrel, Perl, PHP などがそ�
 軽量言語の特徴がよく出てくるのが文字列処理です。 C 言語において文字列処理というものは、メモリのコピー操作を伴い、常にバッファオーバフローなどのバグを意識しながら書かなければいけないとても面倒なものです。
 それに引き替え LL における文字列処理は、言語組み込みの文字列型を用い、四則演算を行う程度の手軽さで文字列を扱うことができるようになっています。
 
-ここでは、軽量言語 Python における文字列操作の基本を見ていきます。
+ここでは、軽量言語 Python においてよく使われる文字列操作の関数・メソッドを挙げています。
 
 
 リテラル
 ========
 
 raw 文字列
-==========
+----------
 
 Python における文字列定数を表現する方法には 2 種類あります。
 
@@ -67,6 +67,13 @@ Python では、文字列に対して + や * などによる演算を行えま�
 ==============
 
 ここでは、代表的な文字列のメソッドを見ていきます。
+
+Python ライブラリリファレンスでは
+
+* `6.6 シーケンス型 <http://www.python.jp/doc/release/library/stdtypes.html#str-unicode-list-tuple-buffer-xrange>`_
+* `6.6.1 文字列メソッド <http://www.python.jp/doc/release/library/stdtypes.html#string-methods>`_
+
+あたりが該当します。
 
 
 .. method:: str.replace(self, target, replaced)
@@ -125,5 +132,93 @@ Python では、文字列に対して + や * などによる演算を行えま�
     '   nnn'
     >>> a.strip()
     'nnn'
+
+
+
+パス操作関数
+============
+
+Python にはファイルパスなどの操作を簡単に行うための関数群が標準ライブラリに存在します。
+
+* `os <http://www.python.jp/doc/release/library/os.html>`_
+* `os.path <http://www.python.jp/doc/release/library/os.path.html>`_
+* `glob <http://www.python.jp/doc/release/library/glob.html>`_
+
+あたりのモジュールが該当します。
+
+これらの関数は OS によってパスの区切り文字(/と\)を自動的に使い分けてくれるので、パスの操作はなるべくこれらの関数で行いましょう。
+
+
+.. function:: os.path.join(*pathes)
+
+パスを結合します。
+
+.. code-block:: python
+
+    >>> os.path.join('/aaa', 'ccc')
+    '/aaa/ccc'
+    >>> os.path.join('/aaa/bbb', 'ccc', 'ddd')
+    '/aaa/bbb/ccc/ddd'
+
+
+.. function:: os.path.basename(path)
+
+パスからファイル名を抜き出します。
+
+.. code-block:: python
+
+    >>> os.path.basename('/home/dummy/test.py')
+    'test.py'
+
+
+.. function:: os.path.dirname(path)
+
+パスからファイル名を取り除きます。
+
+.. code-block:: python
+
+    >>> os.path.dirname('/home/dummy/test.py')
+    '/home/dummy'
+
+
+.. function:: os.path.splitext(path)
+
+ファイルパスと拡張子を分けます。
+
+.. code-block:: python
+
+    >>> os.path.splitext('/home/dummy/test.py')
+    ['/home/dummy/test', '.py']
+
+
+.. function:: os.path.exists(path)
+
+ファイルの存在を確認します。
+
+
+.. code-block:: python
+
+    >>> os.path.exists('/home/dummy/test.py')
+    True
+
+
+.. function:: os.listdir(dirpath)
+
+ディレクトリに存在するファイル名のリストを返します。
+
+.. code-block:: python
+
+    >>> os.listdir('/home/dummy')
+    ['.bashrc', '.bashprofile', '.emacs.d', 'test.py', 'test.pyc']
+
+
+.. function:: glob.glob(path)
+
+ワイルドカードによるパス指定で存在するファイルのリストを返します。
+
+.. code-block:: python
+
+    >>> glob.glob('/home/dummy/*.py')
+    ['/home/dummy/test.py']
 
 
